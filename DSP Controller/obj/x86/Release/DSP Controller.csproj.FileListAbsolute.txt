@@ -123,3 +123,14 @@ G:\DSP Controller FH PM\DSP Controller\obj\x86\Release\DSP Controller.csproj.Gen
 G:\DSP Controller FH PM\DSP Controller\obj\x86\Release\DSP Controller.exe
 G:\DSP Controller FH PM\DSP Controller\obj\x86\Release\DSP Controller.pdb
 G:\DSP Controller FH PM\DSP Controller\obj\x86\Release\DSP Controller.csprojResolveAssemblyReference.cache
+F:\DSP-Controller-FH-PM\DSP Controller\bin\Release\DSP Controller.exe.config
+F:\DSP-Controller-FH-PM\DSP Controller\obj\x86\Release\DSP Controller.exe
+F:\DSP-Controller-FH-PM\DSP Controller\obj\x86\Release\DSP Controller.pdb
+F:\DSP-Controller-FH-PM\DSP Controller\bin\Release\DSP Controller.exe
+F:\DSP-Controller-FH-PM\DSP Controller\bin\Release\DSP Controller.pdb
+F:\DSP-Controller-FH-PM\DSP Controller\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.dll
+F:\DSP-Controller-FH-PM\DSP Controller\bin\Release\Microsoft.VisualBasic.PowerPacks.Vs.xml
+F:\DSP-Controller-FH-PM\DSP Controller\obj\x86\Release\DSP Controller.csprojResolveAssemblyReference.cache
+F:\DSP-Controller-FH-PM\DSP Controller\obj\x86\Release\DSP_Controller.Form1.resources
+F:\DSP-Controller-FH-PM\DSP Controller\obj\x86\Release\DSP_Controller.Properties.Resources.resources
+F:\DSP-Controller-FH-PM\DSP Controller\obj\x86\Release\DSP Controller.csproj.GenerateResource.Cache

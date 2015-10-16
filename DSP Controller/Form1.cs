@@ -53,6 +53,7 @@ namespace DSP_Controller
         private string[] seriesNames;
         private int ReadMsgIndex = 0;
         private int LoadMsgIndex = 0;
+        private double[] initParas;
         #endregion
 
         #region From Init Function
@@ -115,6 +116,8 @@ namespace DSP_Controller
             tbParas[6] = tb_iqKpCurrent;
             tbParas[7] = tb_iqKiCurrent;
             tbParas[8] = tb_iqSatCurrent;
+            initParas = new double[9];
+
             curveComm = new ArrayList();
 
             for (int i = 0; i < 200; i++)
@@ -905,6 +908,7 @@ namespace DSP_Controller
                     if (tbParas[target].Text != "")
                         return;
                     tbParas[target].Text = BitConverter.ToSingle(serialMsg[LoadMsgIndex].MsgData, 0).ToString();
+                    initParas[target] = BitConverter.ToDouble(serialMsg[LoadMsgIndex].MsgData, 0);
                     ParaReceivedFlag ^= mask;
                     if (ParaReceivedFlag == 0x0)
                     {
@@ -1197,6 +1201,13 @@ namespace DSP_Controller
             else
                 ResetChart(Int32.Parse(btn.Name[8].ToString()) - 1);
         }
+
+        private void btnResetPara_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 9; i++)
+                tbParas[i].Text = initParas[i].ToString();
+        }
         #endregion
+
     }
 }
