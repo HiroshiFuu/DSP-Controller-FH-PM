@@ -230,6 +230,7 @@ namespace DSP_Controller
             btnApply_iq.Enabled = state;
             btnApply_iqCurve.Enabled = state;
             btnSet.Enabled = state;
+            btnResetPara.Enabled = state;
             cbCom.Enabled = !state;
             trackBarRun.Enabled = state;
         }
