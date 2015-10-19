@@ -53,6 +53,7 @@ namespace DSP_Controller
         private string[] seriesNames;
         private int ReadMsgIndex = 0;
         private int LoadMsgIndex = 0;
+        private int MaxMsgCnt = 16;
         private double[] initParas;
         #endregion
 
@@ -65,8 +66,8 @@ namespace DSP_Controller
         private void Form1_Load(object sender, EventArgs e)
         {
             ComPort = new SerialPort();
-            serialMsg = new SerialMessage[8];
-            for (int i = 0; i < 8; i++)
+            serialMsg = new SerialMessage[MaxMsgCnt];
+            for (int i = 0; i < MaxMsgCnt; i++)
                 serialMsg[i] = new SerialMessage();
             serialMsgSend = new SerialMessage();
 
@@ -711,7 +712,7 @@ namespace DSP_Controller
                         }
                         BeginInvoke(ProcessDelegate);
                         ReadMsgIndex++;
-                        if (ReadMsgIndex == 8)
+                        if (ReadMsgIndex == MaxMsgCnt)
                             ReadMsgIndex = 0;
                         i += 7;
                     }
@@ -909,7 +910,7 @@ namespace DSP_Controller
                     if (tbParas[target].Text != "")
                         return;
                     tbParas[target].Text = BitConverter.ToSingle(serialMsg[LoadMsgIndex].MsgData, 0).ToString();
-                    initParas[target] = BitConverter.ToDouble(serialMsg[LoadMsgIndex].MsgData, 0);
+                    initParas[target] = BitConverter.ToSingle(serialMsg[LoadMsgIndex].MsgData, 0);
                     ParaReceivedFlag ^= mask;
                     if (ParaReceivedFlag == 0x0)
                     {
@@ -928,7 +929,7 @@ namespace DSP_Controller
                     }
                 }
             LoadMsgIndex++;
-            if (LoadMsgIndex == 8)
+            if (LoadMsgIndex == MaxMsgCnt)
                 LoadMsgIndex = 0;
         }
 
